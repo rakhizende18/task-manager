@@ -1,0 +1,42 @@
+
+    
+   export type TaskItemType = {
+        id: number,
+        title: string,
+        description: string,
+        status: string,
+        priority: string,
+        due_date: string,
+        assigned_to: string
+    }   
+
+    export const tasks:TaskItemType[] = [
+      {
+        "id": 1,
+        "title": "Complete project proposal",
+        "description": "Finish drafting and submit the project proposal by Friday.",
+        "status": "pending",
+        "priority": "high",
+        "due_date": "2024-03-10",
+        "assigned_to": "John Doe"
+      },
+      {
+        "id": 2,
+        "title": "Review client feedback",
+        "description": "Analyze and respond to client feedback regarding the latest project iteration.",
+        "status": "in progress",
+        "priority": "medium",
+        "due_date": "2024-03-15",
+        "assigned_to": "Jane Smith"
+      },
+      {
+        "id": 3,
+        "title": "Update website content",
+        "description": "Update the About Us page and add recent team members' profiles.",
+        "status": "completed",
+        "priority": "low",
+        "due_date": "2024-03-08",
+        "assigned_to": "Mark Johnson"
+      }
+    ]
+  
