@@ -4,13 +4,13 @@ import { TaskItemType } from '../mocks';
 
 const useAxios = () => {
   const [data, setData] = useState<TaskItemType[] | []>([]);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | null>(null);
   
   const url = 'https://my-json-server.typicode.com/rakhizende18/task-manager/tasks'
 
 
-  const get = async () => {
+  const fetchTasks = async () => {
     setLoading(true);
     try {
       const response = await axios.get(url);
@@ -24,7 +24,7 @@ const useAxios = () => {
   };
 
  
-  return {data, loading, error, get };
+  return {data, loading, error, fetchTasks };
 };
 
 export default useAxios;

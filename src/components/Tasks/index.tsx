@@ -3,53 +3,48 @@ import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
 import { TaskItemType } from "../../mocks";
 import { getTasks, setTask } from "../../tasks.slice";
-import ViewTask from "./ViewTask";
-import TaskForm from "./TaskForm";
-import TasksList from "./TasksList";
+import ViewTask from "./ViewTask/ViewTask";
+import TaskForm from "./TaskForm/TaskForm";
+import TasksList from "./TaskList/TasksList";
 import { getFilteredTaskById } from "./utils";
 import useAxios from "../../hooks/useAxios";
 import Loader from "../../common/Loader";
+import { BUTTON_LABELS } from "../../constants";
 
 function TaskSystem() {
-  const [displayTask, setDisplayTask] = useState<TaskItemType | {}>();
+  const [selectedTask, setSelectedTask] = useState<TaskItemType | {}>();
   const [isEdit, setIsEdit] = useState<boolean>(false);
   const [isOpenTaskForm, setIsOpenTaskForm] = useState(false);
+
+  const {CREATE} = BUTTON_LABELS
 
   const dispatch = useDispatch();
 
   const tasksList = useSelector(getTasks);
 
-  const { data, loading, get } = useAxios();
+  const { data, loading, fetchTasks } = useAxios();
 
   useEffect(() => {
-    get();
+    fetchTasks();
   }, []);
 
   useEffect(() => {
     dispatch(setTask(data));
   }, [data]);
 
-  const handleView = (id: number) => {
-    setDisplayTask(getFilteredTaskById(id, tasksList));
-  };
 
   const handleEdit = (id: number) => {
     setIsEdit(true);
-    setDisplayTask(getFilteredTaskById(id, tasksList));
+    setSelectedTask(getFilteredTaskById(id, tasksList));
     setIsOpenTaskForm(true);
   };
 
-  const handleOpenTaskForm = () => {
-    setIsOpenTaskForm(true);
-  };
 
   const handleCloseModal = () => {
     setIsOpenTaskForm(false);
-    setDisplayTask({});
+    setSelectedTask({});
     setIsEdit(false);
   };
-
- 
 
   if (loading) {
     return <Loader />;
@@ -58,23 +53,23 @@ function TaskSystem() {
   return (
     <>
       <Container>
-        <Button onClick={handleOpenTaskForm}>Create Task</Button>
+        <Button onClick={()=> setIsOpenTaskForm(true)}>{CREATE}</Button>
       </Container>
 
-      <TasksList handleEdit={handleEdit} handleView={handleView} />
+      <TasksList handleEdit={handleEdit} handleView={(id)=> setSelectedTask(getFilteredTaskById(id, tasksList))} />
 
       {isOpenTaskForm && (
         <TaskForm
           isModalOpen={isOpenTaskForm}
           isEdit={isEdit}
-          task={displayTask}
+          task={selectedTask}
           handleCloseModal={handleCloseModal}
         />
       )}
-      {!!displayTask && !isOpenTaskForm && (
+      {!!selectedTask && !isOpenTaskForm && (
         <ViewTask
-          task={displayTask}
-          isModalOpen={!!Object.keys(displayTask).length && !isOpenTaskForm}
+          task={selectedTask}
+          isModalOpen={!!Object.keys(selectedTask).length && !isOpenTaskForm}
           handleCloseModal={handleCloseModal}
         />
       )}
@@ -92,7 +87,7 @@ const Container = styled.div`
 const Button = styled.button`
   padding: 8px 16px;
   margin-right: 8px;
-  background-color: #007bff;
+  background-color: #ff0000;
   color: #fff;
   border: none;
   border-radius: 4px;
@@ -102,8 +97,9 @@ const Button = styled.button`
   margin-top: 10px;
   position: relative;
   float: right;
+  margin-bottom: 10px;
 
   &:hover {
-    background-color: #0056b3;
+    background-color: #c64348;
   }
 `;

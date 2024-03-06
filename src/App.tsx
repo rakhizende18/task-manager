@@ -2,12 +2,14 @@ import styled from "styled-components";
 import { Provider } from "react-redux";
 import store from "./store";
 import TaskSystem from "./components/Tasks";
+import { HEADER } from "./constants";
 
 function App() {
+  const {APPLICATION_HEADER} = HEADER
   return (
     <Provider store={store}>
       <Main>
-        <Header>Task Management System</Header>
+        <Header>{APPLICATION_HEADER}</Header>
         <Container>
           <TaskSystem />
         </Container>
@@ -28,7 +30,7 @@ const Header = styled.div`
   justify-content: center;
   padding: 20px;
   font-weight: 800;
-  background-color: beige;
+  background-color: #cae7e7;
 `;
 
 const Container = styled.div`
