@@ -1,4 +1,3 @@
-import React from "react";
 import { render, fireEvent, screen } from "@testing-library/react";
 import Task from "./Task";
 import { useDispatch } from "react-redux";
@@ -12,6 +11,7 @@ jest.mock("react-redux", () => ({
 
 
 jest.mock("../../../../tasks.slice.ts", () => ({
+    ...jest.requireActual('./../../../../tasks.slice.ts'),
   removeTask: jest.fn(),
 }));
 

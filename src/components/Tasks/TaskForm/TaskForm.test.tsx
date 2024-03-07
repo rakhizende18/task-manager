@@ -6,7 +6,7 @@ import { addTask, editTask } from '../../../tasks.slice';
 import { HEADER } from '../../../constants';
 
 jest.mock("../../../hoc/WithModal.tsx", () => (component: any) => component);
-// Mocking useDispatch hook
+
 jest.mock('react-redux', () => ({
   useDispatch: jest.fn(),
 }));

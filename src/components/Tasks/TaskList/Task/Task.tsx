@@ -33,8 +33,8 @@ function Task({ task, handleView, handleEdit }: TaskProp) {
         <TableCell><span style={{...getStatusStyling(status)}}>{status}</span></TableCell>
         <TableCell>
           <Button onClick={() => handleView(id)}>{VIEW}</Button>
-          <Button onClick={() => handleDelete(id)}>{DELETE}</Button>
-          <Button data-testid={`delete-button-${id}`} onClick={() => handleEdit(id)}>{EDIT}</Button>
+          <Button data-testid={`delete-button-${id}`}  onClick={() => handleDelete(id)}>{DELETE}</Button>
+          <Button onClick={() => handleEdit(id)}>{EDIT}</Button>
         </TableCell>
       </TableRow>
     </>
