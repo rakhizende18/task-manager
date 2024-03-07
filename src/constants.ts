@@ -29,6 +29,6 @@ export const HEADER = {
     APPLICATION_HEADER: 'Task Mangement System',
     TASK_DETAILS: 'Task Details',
     EDIT_TASK: 'Edit Task',
-    CREATE_TASK: 'Creat Task'
+    CREATE_TASK: 'Create Task'
 
 }

@@ -87,7 +87,6 @@ const TaskForm = ({ isEdit, task, handleCloseModal }: TaskFormProp) => {
 
   const validation = (event: FormEvent) => {
     const element = event.target as HTMLInputElement;
-    console.log("event", element.value);
     if (element.value === "") {
       setIsError(true);
     } else {

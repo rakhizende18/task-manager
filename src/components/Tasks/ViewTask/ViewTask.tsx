@@ -4,6 +4,7 @@ import { FORM_LABELS, HEADER } from "../../../constants";
 import WithModal from "../../../hoc/WithModal";
 import TaskDetailRow from "./TaskDetailRow";
 
+
 function ViewTask({ task }: any) {
   const { title, description, priority, due_date, status, assigned_to } = task;
   const {TITLE, DESCRIPTION, PRIORITY, DUE_DATE, STATUS, ASSIGNED_TO} = FORM_LABELS
