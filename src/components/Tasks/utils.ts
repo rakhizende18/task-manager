@@ -1,5 +1,4 @@
-import { stat } from "fs";
-import { TaskItemType } from "../../mocks";
+import { TaskItemType } from "@/mocks";
 import { FormDetails } from "./TaskForm/TaskForm";
 
 export const getFilteredTaskById = (id: number, tasksList: TaskItemType[]) => {

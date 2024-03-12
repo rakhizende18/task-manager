@@ -1,7 +1,7 @@
 import { ComponentType, useEffect, useState } from "react";
 import ReactModal from "react-modal";
 import styled from "styled-components";
-import { BUTTON_LABELS } from "../constants";
+import { BUTTON_LABELS } from "@/constants";
 
 type OriginalComponentProps = {};
 

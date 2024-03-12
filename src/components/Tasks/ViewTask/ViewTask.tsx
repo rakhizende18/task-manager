@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { FORM_LABELS, HEADER } from "../../../constants";
-import WithModal from "../../../hoc/WithModal";
+import { FORM_LABELS, HEADER } from "@/constants";
+import WithModal from "@/hoc/WithModal";
 import TaskDetailRow from "./TaskDetailRow";
 
 

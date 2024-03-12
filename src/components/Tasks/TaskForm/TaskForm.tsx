@@ -1,10 +1,10 @@
 import React, { FormEvent, useEffect, useState } from "react";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
-import { FORM_LABELS, BUTTON_LABELS, HEADER } from "../../../constants";
-import { addTask, editTask } from "../../../tasks.slice";
-import WithModal from "../../../hoc/WithModal";
-import { isFormEmpty, isValidDate } from "../utils";
+import { FORM_LABELS, BUTTON_LABELS, HEADER } from "@/constants";
+import { addTask, editTask } from "@/tasks.slice";
+import WithModal from "@/hoc/WithModal";
+import { isFormEmpty, isValidDate } from "@/components/Tasks/utils";
 
 type TaskFormProp = {
   isEdit: boolean;

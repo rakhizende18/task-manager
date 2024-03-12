@@ -1,11 +1,11 @@
 
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
-import { BUTTON_LABELS } from "../../../../constants";
-import { TaskItemType } from "../../../../mocks";
+import { BUTTON_LABELS } from "@/constants";
+import { TaskItemType } from "@/mocks";
 
-import { removeTask } from "../../../../tasks.slice";
-import { getStatusStyling } from "../../utils";
+import { removeTask } from "@/tasks.slice";
+import { getStatusStyling } from "@/components/Tasks/utils";
 
 type TaskProp = {
   task: TaskItemType;

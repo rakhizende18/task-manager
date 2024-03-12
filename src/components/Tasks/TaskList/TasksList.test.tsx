@@ -2,7 +2,7 @@ import React from 'react';
 import { render,screen } from '@testing-library/react';
 import TasksList from './TasksList';
 import { useSelector } from 'react-redux';
-import { TABLE_HEADER } from '../../../constants';
+import { TABLE_HEADER } from '@/constants';
 
 jest.mock('react-redux', () => ({
     ...jest.requireActual('react-redux'), 

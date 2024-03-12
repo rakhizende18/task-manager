@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useDispatch, useSelector } from "react-redux";
-import { TaskItemType } from "../../mocks";
-import { getTasks, setTask } from "../../tasks.slice";
+import { TaskItemType } from "@/mocks";
+import { getTasks, setTask } from "@/tasks.slice";
+import useAxios from "@/hooks/useAxios";
+import Loader from "@/common/Loader";
+import { BUTTON_LABELS } from "@/constants"
 import ViewTask from "./ViewTask/ViewTask";
 import TaskForm from "./TaskForm/TaskForm";
 import TasksList from "./TaskList/TasksList";
 import { getFilteredTaskById } from "./utils";
-import useAxios from "../../hooks/useAxios";
-import Loader from "../../common/Loader";
-import { BUTTON_LABELS } from "../../constants";
+;
 
 function TaskSystem() {
   const [selectedTask, setSelectedTask] = useState<TaskItemType | {}>();

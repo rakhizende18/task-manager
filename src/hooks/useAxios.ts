@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-import { TaskItemType } from '../mocks';
+import { TaskItemType } from '@/mocks';
 
 const useAxios = () => {
   const [data, setData] = useState<TaskItemType[] | []>([]);

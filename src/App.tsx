@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Provider } from "react-redux";
+import TaskSystem from "@/components/Tasks";
 import store from "./store";
-import TaskSystem from "./components/Tasks";
 import { HEADER } from "./constants";
 
 function App() {

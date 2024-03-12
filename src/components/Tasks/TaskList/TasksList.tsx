@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { useSelector } from "react-redux";
-import { TABLE_HEADER } from "../../../constants";
-import { getTasks } from "../../../tasks.slice";
-import { TaskItemType } from "../../../mocks";
+import { TABLE_HEADER } from "@/constants";
+import { getTasks } from "@/tasks.slice";
+import { TaskItemType } from "@/mocks";
 import Task from "./Task/Task";
 
 type TasksListProp = {

@@ -2,10 +2,10 @@ import React from 'react';
 import { render, fireEvent,screen } from '@testing-library/react';
 import TaskForm from './TaskForm';
 import { useDispatch } from 'react-redux';
-import { addTask, editTask } from '../../../tasks.slice';
-import { HEADER } from '../../../constants';
+import { addTask, editTask } from '@/tasks.slice';
+import { HEADER } from '@/constants';
 
-jest.mock("../../../hoc/WithModal.tsx", () => (component: any) => component);
+jest.mock("@/hoc/WithModal.tsx", () => (component: any) => component);
 
 jest.mock('react-redux', () => ({
   useDispatch: jest.fn(),

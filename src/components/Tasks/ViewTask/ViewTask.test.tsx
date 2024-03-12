@@ -1,9 +1,9 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
 import ViewTask from "./ViewTask";
-import { FORM_LABELS, HEADER } from "../../../constants";
+import { FORM_LABELS, HEADER } from "@/constants";
 
-jest.mock("../../../hoc/WithModal", () => (component: any) => component);
+jest.mock("@/hoc/WithModal", () => (component: any) => component);
 
 describe("ViewTask component", () => {
   const mockTask = {
